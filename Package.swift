@@ -28,6 +28,9 @@ let package = Package(
         .library(
             name: "PerfectPython",
             targets: ["PerfectPython"]),
+        .library(
+            name: "PythonAPI",
+            targets: ["PythonAPI"]),
     ],
     targets: [
       .target(name: "PythonAPI", dependencies: []),
