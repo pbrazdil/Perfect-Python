@@ -1,5 +1,5 @@
 module PythonAPI [system] {
   header "PythonAPI.h"
-  link "python2.7"
+  link "python2"
   export *
 }

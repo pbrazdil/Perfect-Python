@@ -209,6 +209,7 @@ public class PyObj {
       ref = reference
     } else {
       let err = PyObj.LastError()
+      print(err)
       throw Exception.ImportFailure(err)
     }
   }
