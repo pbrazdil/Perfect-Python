@@ -139,7 +139,7 @@ public extension Dictionary where Key == String, Value == Pythonable {
 public class PyObj {
 
   /// reference pointer
-  let ref: UnsafeMutablePointer<PyObject>
+  open let ref: UnsafeMutablePointer<PyObject>
 
   /// if explicitly marked autoDealloc to false, the pointer will not be released
   public var autoDealloc = true
