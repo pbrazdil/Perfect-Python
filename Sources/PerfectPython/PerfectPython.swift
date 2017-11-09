@@ -349,7 +349,7 @@ public class PyObj {
     defer {
       Py_DecRef(function)
     }
-    let result: UnsafeMutablePointer<PyObject>
+    let result: UnsafeMutablePointer<PyObject>?
     if let a = args, a.count < 1 {
       result = PyObject_CallObject(function, nil)
     } else if let a = args, let tuple = try? PyObj(arguments: a)  {
@@ -357,7 +357,12 @@ public class PyObj {
     } else {
       result = PyObject_CallObject(function, nil)
     }
-    return PyObj(result)
+    
+    if result == nil {
+        return nil
+    } else {
+        return PyObj(result!)
+    }
   }
 
   /// initialize the current python object to a class instance.
